@@ -10,6 +10,7 @@ pipeline {
         stage('Deploy to Nginx') {
              steps {
                 // Copy your HTML application files to the Nginx web root directory
+                sh "rm /var/www/html"
                 sh 'sudo cp -r * /var/www/html'
             }
             }
